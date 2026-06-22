@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HaiMusic – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0f0a;
+      --surface:   #111811;
+      --card:      #161e16;
+      --border:    #1f2d1f;
+      --green:     #5de88a;
+      --green-dim: #2d7a4a;
+      --green-glow:rgba(93,232,138,.12);
+      --text:      #e8f0e8;
+      --muted:     #7a9278;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,15,10,.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-icon svg { color: #0a0f0a; }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -.3px;
+    }
+    .logo-text span { color: var(--green); }
+
+    .badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-glow);
+      border: 1px solid var(--green-dim);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 24px 48px;
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      font-size: 15px;
+    }
+
+    .updated-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .updated-chip::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 520px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+
+    .toc li { counter-increment: toc; }
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      transition: color .2s;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green-dim);
+      min-width: 22px;
+    }
+    .toc a:hover { color: var(--green); }
+    .toc { counter-reset: toc; }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--green);
+      background: var(--green-glow);
+      border: 1px solid var(--green-dim);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -.2px;
+    }
+
+    .section p {
+      color: var(--text);
+      margin-bottom: 14px;
+      opacity: .9;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── SUBSECTIONS ── */
+    .subsection {
+      margin: 24px 0;
+    }
+
+    .subsection h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── PERMISSION CARDS ── */
+    .perm-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .perm-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      transition: border-color .2s;
+    }
+    .perm-card:hover { border-color: var(--green-dim); }
+
+    .perm-icon {
+      width: 36px; height: 36px;
+      background: var(--green-glow);
+      border: 1px solid var(--green-dim);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .perm-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 2px;
+      letter-spacing: .02em;
+    }
+
+    .perm-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── RIGHTS LIST ── */
+    .rights-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .right-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .right-dot {
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .right-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .right-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: var(--green-glow);
+      border: 1px solid var(--green-dim);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text);
+      margin: 18px 0;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .contact-icon {
+      width: 38px; height: 38px;
+      background: var(--green-glow);
+      border: 1px solid var(--green-dim);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-value a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    footer strong { color: var(--green); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-icon">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+  </div>
+  <span class="logo-text">Hai<span>Music</span></span>
+  <span class="badge">Privacy Policy</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-eyebrow">HaldarAi · HaiMusic App</span>
+  <h1>Your Privacy,<br /><em>Our Commitment</em></h1>
+  <p>We believe in clear, honest communication about how your data is handled — no legalese, no surprises.</p>
+  <span class="updated-chip">Last Updated: June 22, 2026</span>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ol>
+      <li><a href="#s1">Interpretation &amp; Definitions</a></li>
+      <li><a href="#s2">Data We Collect</a></li>
+      <li><a href="#s3">How We Use Your Data</a></li>
+      <li><a href="#s4">Retention Periods</a></li>
+      <li><a href="#s5">Data Transfers</a></li>
+      <li><a href="#s6">Your Rights &amp; Deletion</a></li>
+      <li><a href="#s7">Disclosure of Data</a></li>
+      <li><a href="#s8">Security</a></li>
+      <li><a href="#s9">Children's Privacy</a></li>
+      <li><a href="#s10">Third-Party Links</a></li>
+      <li><a href="#s11">Policy Changes</a></li>
+      <li><a href="#s12">Grievance Officer</a></li>
+      <li><a href="#s13">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- INTRO -->
+  <p style="color:var(--muted);margin-bottom:40px;font-size:14px;">This Privacy Policy describes how <strong style="color:var(--text)">HaiMusic</strong> ("App"), developed by <strong style="color:var(--text)">HaldarAi</strong>, collects, uses, and discloses information when you use our mobile application. By using HaiMusic, you agree to the practices described here.</p>
+
+  <hr class="divider" />
+
+  <!-- S1 -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Interpretation &amp; Definitions</h2>
+    </div>
+    <p><strong style="color:var(--white)">Interpretation:</strong> Words with capitalised initials have meanings defined below. These definitions apply regardless of whether they appear in singular or plural form.</p>
+    <div class="subsection">
+      <h3>Definitions</h3>
+      <div class="rights-list">
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">App</div><div class="right-desc">HaiMusic — the mobile application provided by HaldarAi.</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Developer / Company</div><div class="right-desc">HaldarAi, the entity responsible for the development and maintenance of HaiMusic.</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Personal Data</div><div class="right-desc">Any information that relates to an identified or identifiable individual.</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Usage Data</div><div class="right-desc">Data collected automatically when you interact with the App (e.g. session duration, features accessed).</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">You / User</div><div class="right-desc">Any individual who installs or uses the HaiMusic application.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S2 -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Data We Collect</h2>
+    </div>
+
+    <div class="subsection">
+      <h3>Personal &amp; Usage Data</h3>
+      <p>We collect limited data to provide and improve the HaiMusic experience:</p>
+      <div class="rights-list">
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Usage Data</div><div class="right-desc">Songs played, playlists created, features accessed, and session duration — used to personalise your experience.</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Device Information</div><div class="right-desc">Device model, operating system, unique device identifiers, and mobile network information.</div></div></div>
+        <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Analytics Data</div><div class="right-desc">Anonymous, aggregated data about app performance and crash reports — never linked to you personally.</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>App Permissions</h3>
+      <p>HaiMusic requests the following Android permissions. Each is used solely for the purpose stated:</p>
+      <div class="perm-grid">
+        <div class="perm-card"><div class="perm-icon">🌐</div><div><div class="perm-name">INTERNET</div><div class="perm-desc">Streams music and communicates with our servers for online playback and content delivery.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">📶</div><div><div class="perm-name">ACCESS_NETWORK_STATE</div><div class="perm-desc">Checks connectivity status so the app can decide between streaming and cached content.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">▶️</div><div><div class="perm-name">FOREGROUND_SERVICE_MEDIA_PLAYBACK</div><div class="perm-desc">Keeps music playing uninterrupted when the app is in the background or the screen is off.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">🔒</div><div><div class="perm-name">WAKE_LOCK</div><div class="perm-desc">Prevents the device from sleeping during playback to ensure a continuous audio experience.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">🎙️</div><div><div class="perm-name">RECORD_AUDIO</div><div class="perm-desc">Used only when you actively engage voice search or voice commands. Audio is processed for your request only — never for surveillance.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">🔊</div><div><div class="perm-name">MODIFY_AUDIO_SETTINGS</div><div class="perm-desc">Adjusts volume levels and output device settings to optimise your listening experience.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">🔔</div><div><div class="perm-name">POST_NOTIFICATIONS</div><div class="perm-desc">Sends playback controls and important app updates to your notification shade.</div></div></div>
+        <div class="perm-card"><div class="perm-icon">⚙️</div><div><div class="perm-name">DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</div><div class="perm-desc">An internal app component permission. It does not access any user data.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S3 -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>How We Use Your Data</h2>
+    </div>
+    <p>The information we collect is used exclusively to operate and improve HaiMusic:</p>
+    <div class="rights-list">
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Service Delivery</div><div class="right-desc">To provide core functionality — music streaming, offline playback, and audio effects.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Personalisation</div><div class="right-desc">To tailor recommendations, Quick Picks, and Recently Played based on your listening habits.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">App Improvement</div><div class="right-desc">To analyse usage patterns, identify bugs, and improve performance and new features.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Notifications</div><div class="right-desc">To send playback controls and relevant app updates (with your permission).</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Security &amp; Compliance</div><div class="right-desc">To detect and prevent misuse, technical issues, or fraudulent activity.</div></div></div>
+    </div>
+    <div class="highlight">We do <strong>not</strong> use your data for advertising, profiling, or selling to third parties.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S4 -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Retention Periods</h2>
+    </div>
+    <p>We retain your Personal Data only for as long as necessary to fulfil the purposes outlined in this Policy — including meeting legal obligations, resolving disputes, and enforcing our agreements.</p>
+    <p>Usage and analytics data is retained in anonymised form for up to 24 months for performance analysis. When data is no longer required, it is securely deleted or anonymised.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S5 -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Data Transfers</h2>
+    </div>
+    <p>HaiMusic is developed in <strong style="color:var(--white)">West Bengal, India</strong> and operates under Indian data protection law. If you access the App from outside India, please note that your information may be transferred to and processed in India, where data protection standards may differ from your country.</p>
+    <p>By using the App, you consent to this transfer. We take steps to ensure any such transfer is handled securely and in accordance with applicable law.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S6 -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Your Rights &amp; Deletion</h2>
+    </div>
+    <p>Depending on your jurisdiction, you have the following rights regarding your personal data:</p>
+    <div class="rights-list">
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Access &amp; Update</div><div class="right-desc">Request a copy of the personal data we hold about you, or ask us to correct inaccurate information.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Deletion</div><div class="right-desc">Request that we delete your personal data. We will comply unless we are legally required to retain it.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Objection</div><div class="right-desc">Object to our processing of your personal data in certain circumstances.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Restriction</div><div class="right-desc">Request that we limit how we process your personal data.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Portability</div><div class="right-desc">Receive your personal data in a structured, machine-readable format.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Withdraw Consent</div><div class="right-desc">Withdraw consent at any time where we rely on consent to process your data.</div></div></div>
+    </div>
+    <p style="margin-top:16px;">To exercise any of these rights, contact us at <a href="mailto:business.tizongaming@gmail.com" style="color:var(--green)">business.tizongaming@gmail.com</a>. We will respond within 30 days.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S7 -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Disclosure of Data</h2>
+    </div>
+    <p>We do <strong style="color:var(--white)">not</strong> sell, trade, or rent your personal data. We may share it only in the following limited situations:</p>
+    <div class="rights-list">
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Service Providers</div><div class="right-desc">Trusted third-party vendors who assist in operating the App (e.g. analytics, crash reporting). They access data only as needed to perform their tasks and are bound by confidentiality obligations.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Legal Requirements</div><div class="right-desc">When required by law, court order, or government authority, or to protect our legal rights, user safety, or the public.</div></div></div>
+      <div class="right-item"><div class="right-dot"></div><div><div class="right-title">Business Transfers</div><div class="right-desc">In the event of a merger, acquisition, or sale of assets, your data may be transferred. You will be notified in advance.</div></div></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S8 -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Security</h2>
+    </div>
+    <p>We use commercially reasonable technical and organisational measures to protect your personal data — including encryption in transit and restricted access controls.</p>
+    <div class="highlight">⚠️ No method of internet transmission or electronic storage is 100% secure. While we work hard to protect your data, we cannot guarantee absolute security.</div>
+    <p>If you suspect a security breach affecting your data, please contact us immediately at <a href="mailto:business.tizongaming@gmail.com" style="color:var(--green)">business.tizongaming@gmail.com</a>.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S9 -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>HaiMusic is <strong style="color:var(--white)">not directed at children under the age of 13</strong>. We do not knowingly collect personal data from anyone under 13.</p>
+    <p>If you are a parent or guardian and believe your child has provided personal data to us, please contact us immediately. We will promptly delete any such data from our systems upon verification.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S10 -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Third-Party Links</h2>
+    </div>
+    <p>HaiMusic may contain links to third-party websites or services (such as music sources or content providers). We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites.</p>
+    <p>We encourage you to review the privacy policy of every external service you visit.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S11 -->
+  <section class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2>Policy Changes</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this page and, where appropriate, notify you via an in-app notification.</p>
+    <p>Continued use of HaiMusic after any changes constitutes your acceptance of the revised Policy. We encourage you to review this page periodically.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S12 -->
+  <section class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2>Grievance Officer</h2>
+    </div>
+    <p>In accordance with the Information Technology Act, 2000 and applicable rules, and the Digital Personal Data Protection Act, 2023 (India), we have appointed a Grievance Officer to address any concerns about the processing of your personal data.</p>
+    <div class="contact-card" style="margin-top:20px;">
+      <div class="contact-row">
+        <div class="contact-icon">👤</div>
+        <div>
+          <div class="contact-label">Grievance Officer</div>
+          <div class="contact-value">SUBHOJIT HALDAR</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🏢</div>
+        <div>
+          <div class="contact-label">Organisation</div>
+          <div class="contact-value">HaldarAi</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">West Bengal, India</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:business.tizongaming@gmail.com">business.tizongaming@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+918637856826">+91 86378 56826</a></div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:13px;color:var(--muted);">Grievances will be acknowledged within 48 hours and resolved within 30 days of receipt.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- S13 -->
+  <section class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2>Contact Us</h2>
+    </div>
+    <p>For any questions or concerns about this Privacy Policy or how we handle your data, please reach out:</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:business.tizongaming@gmail.com">business.tizongaming@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+918637856826">+91 86378 56826</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">West Bengal, India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <strong>HaldarAi</strong> · HaiMusic · All rights reserved.</p>
+  <p style="margin-top:6px;">Made in West Bengal, India 🇮🇳</p>
+</footer>
+
+</body>
+</html>
