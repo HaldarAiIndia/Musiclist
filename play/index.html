@@ -1077,7 +1077,7 @@
             <div class="tab" onclick="setCategory('Tollywood')">Tollywood</div>
             <div class="tab" onclick="setCategory('Bhakti')">Bhakti</div>
             <div class="tab" onclick="setCategory('Phonk')">Phonk</div>
-            <div class="tab" onclick="setCategory('slowdefy')">slowdefy</div>
+            <div class="tab" onclick="setCategory('Slowedfy')">Slowedfy</div>
             <div class="tab" onclick="setCategory('Local')">Local</div>
         </div>
 
@@ -1230,7 +1230,7 @@
             } catch (e) { console.error("Load failed for "+source.category); }
         }
 
-        // Load slowdefy tracks from Google Drive
+        // Load Slowedfy tracks from Google Drive
         try {
             const folderMatch = GDRIVE_FOLDER_URL.match(/\/folders\/([a-zA-Z0-9_-]+)/);
             const folderId = folderMatch ? folderMatch[1] : '';
@@ -1247,7 +1247,7 @@
                             id: f.id,
                             name: f.name.replace(/\.(mp3|m4a|wav|flac|ogg|aac)$/i, '').replace(/_/g, ' '),
                             url: `https://www.googleapis.com/drive/v3/files/${f.id}?alt=media&key=${GDRIVE_API_KEY}`,
-                            category: 'slowdefy',
+                            category: 'Slowedfy',
                             size: 'Online'
                         }));
                     allSongs = [...allSongs, ...driveTracks];
@@ -1255,7 +1255,7 @@
                 }
             }
         } catch (e) {
-            console.error("Load failed for slowdefy");
+            console.error("Load failed for Slowedfy");
         }
     }
 
