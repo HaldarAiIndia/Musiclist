@@ -1,6 +1,6 @@
 <?php
 /**
- * HAIMUSIC - HOME EDITION (OPTIMIZED)
+ * HAIMUSIC × Slowedfy - HOME EDITION (OPTIMIZED)
  */
 
 // --- 1. SECURE LOCAL STREAMING BRIDGE ---
@@ -1094,7 +1094,7 @@ $localJson = json_encode(array_values($localSongs));
             <div class="tab" onclick="setCategory('Tollywood')">Tollywood</div>
             <div class="tab" onclick="setCategory('Bhakti')">Bhakti</div>
             <div class="tab" onclick="setCategory('Phonk')">Phonk</div>
-            <div class="tab" onclick="setCategory('slowdefy')">slowdefy</div>
+            <div class="tab" onclick="setCategory('Slowedfy')">Slowedfy</div>
             <div class="tab" onclick="setCategory('Local')">Local</div>
         </div>
 
@@ -1247,7 +1247,7 @@ $localJson = json_encode(array_values($localSongs));
             } catch (e) { console.error("Load failed for "+source.category); }
         }
 
-        // Load slowdefy category from Google Drive
+        // Load Slowedfy category from Google Drive
         try {
             const folderMatch = gDriveFolderUrl.match(/folders\/([a-zA-Z0-9_-]+)/);
             const folderId = folderMatch ? folderMatch[1] : '';
@@ -1261,14 +1261,14 @@ $localJson = json_encode(array_values($localSongs));
                             id: f.id,
                             name: f.name.replace(/\.(mp3|m4a|wav|flac)$/i, '').replace(/_/g, ' '),
                             url: `https://www.googleapis.com/drive/v3/files/${f.id}?alt=media&key=${gDriveApiKey}`,
-                            category: 'slowdefy',
+                            category: 'Slowedfy',
                             size: f.size ? (f.size / 1048576).toFixed(1) + 'MB' : 'Online'
                         }));
                     allSongs = [...allSongs, ...driveSongs];
                     render();
                 }
             }
-        } catch (e) { console.error("Load failed for slowdefy"); }
+        } catch (e) { console.error("Load failed for Slowedfy"); }
     }
 
     function setCategory(cat) {
